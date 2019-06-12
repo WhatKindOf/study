@@ -1,0 +1,32 @@
+Transitions이란?     이동 / 변경을 멋지게 보여주는 효과
+
+focus, active, hover에서 효과적으로 적용이 됨.
+
+작성한 property 혹은 전체에 변경 효과를 주는 것.
+
+
+기존에 hover를 활용하게 되면
+
+기존 색상 -> 변경 색상으로 변화되는 모습에 효과가 없다.
+
+
+트랜지션을 적용하게 되면 변화되는 모습을 설정할 수 있다.
+
+.box{
+	background-color : green;
+	transition : background-color 3s ease-in-out
+}
+
+.box:hover{
+	background-color : red;	
+}
+
+이렇게 하게 되면 초록색에서 빨간색으로 3초만에 바뀌는 모습을 볼 수 있다.
+
+저기 background-color에 다른 것을 넣으면 해당 속성이 바뀌는 걸 목격 가능
+
+color 또는 all 같은
+
+ease-in-out은 애니메이션 , 스르륵 나타나고, 스르륵 사라지는 효과
+https://developer.mozilla.org/en-US/docs/Web/CSS/transition
+

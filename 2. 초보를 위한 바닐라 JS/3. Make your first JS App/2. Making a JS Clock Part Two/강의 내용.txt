@@ -1,0 +1,72 @@
+이번에 볼 함수는 setInterval 이다.
+
+이 함수가 하는 일은 두 인자값(argument)을 받는데,
+첫번째 인자로 실행할 함수를 받고,
+그리고 그 함수를 실행하고 싶은 시간을 받는다. 
+
+다시말해, 첫번째 인자는 함수.  두번째 인자는 실행할 시간 간격.
+
+실행할 시간 간격의 단위가 millisecond이기 때문에
+만약 3초를 주고 싶다면 3000을 줘야함.
+
+const clockContainer = document.querySelector(".js-clock");
+const clockTitle = clockContainer.querySelector(".js-title");
+
+function getTime() {
+  const date = new Date();
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const seconds = date.getSeconds();
+  clockTitle.innerText = `${hours}:${minutes}:${seconds}`;
+}
+
+function init() {
+  getTime();
+  setInterval(getTime, 1000);
+}
+
+init();
+
+1초마다 다시 실행하도록 해서 
+실시간으로 시간을 받아오는 것에는 성공.
+
+다만 문제점이 있다.
+각 자리의 숫자가 한자리가 될 때 포맷이 어색하다.
+예를 들면 다음과 같이 보인다는 것이다.
+
+10:43:1  이 것을 다음과 같이 바꾸고 싶다.
+
+10:43:01
+위처럼 한자리 숫자 앞에 0을 붙이고 싶다.
+
+만약 숫자가 10보다 작으면 그 앞에 0을 붙이겠다.
+
+이번에 배울 것은 삼항연산자.
+clockTitle.innerText = `${hours}:${minutes > 9 ? minutes : `0${minutes}`}:${
+    seconds > 9 ? seconds : `0${seconds}`
+  }`;
+
+seconds > 9 ? seconds : '0${seconds}'  이 부분.
+조건문 ? 참일때 반환 : 거짓일때 반환
+
+const clockContainer = document.querySelector(".js-clock");
+const clockTitle = clockContainer.querySelector(".js-title");
+
+function getTime() {
+  const date = new Date();
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const seconds = date.getSeconds();
+  clockTitle.innerText = `${hours > 9 ? hours : `0${hours}`}:${
+    minutes > 9 ? minutes : `0${minutes}`
+  }:${seconds > 9 ? seconds : `0${seconds}`}`;
+}
+
+function init() {
+  getTime();
+  setInterval(getTime, 1000);
+}
+
+init();
+
+삼항연산자까지 적용하여 위와 같이 완성.

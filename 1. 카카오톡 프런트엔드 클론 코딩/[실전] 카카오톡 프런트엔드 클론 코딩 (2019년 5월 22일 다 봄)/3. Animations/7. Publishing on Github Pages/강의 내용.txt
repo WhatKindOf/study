@@ -1,0 +1,91 @@
+이번 시간에는 어떻게 웹페이지를 위한 호스팅을 얻을 수 있는지에 대한 강의
+
+
+먼저 github desktop을 연다.
+
+github page라는 것을 새로 만든다.
+
+Github Page : Github가 Github에 있는 사용자의 static 웹사이트를 무료로 호스팅할 수 있게 해주는 서비스
+
+
+static 웹사이트 ? 
+데이터베이스나 벡엔드 같은 데에서 오는 정보들을 갖지 않는다.
+그저 프론트엔드만 가지고 있을뿐
+
+
+여지껏 만든 모든 파일들을
+gh-pages라는 branch에 넣을 거임.
+
+먼저 branch를 만들어야함.
+
+새로운 branch를 만들게 되면
+안내문에
+'새로 만들 branch는 현재 checked out 되어 있는 
+branch(master)를 기준으로 함'
+이라고 되어있다.
+
+이름을 바꾸고 싶겟지만
+이름은 무조건 gh-pages라고 해야한다.
+
+이렇게 해야지만
+Github가 아 이 코드들이 publishing을 원하는 코드구나 라고 알 수 있기 때문.
+
+
+github desktop에서 gh-pages를 만들고 publish했다면
+이제 github pages의 domain을 얻어야 한다.
+
+username(WhatKindOf).github.io/a name of the project(kakao-clone-v2)
+
+이제 이 주소로 다른 사람들도 들어올 수 있게 된다.
+
+
+
+이제 master와 gh-pages 
+두 개의 branch가 생겼는데
+무언가 변경사항이 생겼다면
+github desktop에서 master branch로 변경해주고 나서 해야함. 중요중요
+
+꼭 기억해야함!!!!
+변경사항이 있을 때
+gh-pages branch에 있으면 안됨!
+master에서 해야함
+
+master에서 변경사항을 
+commit하고 나면 master에만 적용되었을뿐
+gh-pages에는 아직 적용되지 않았다
+
+그래서 gh-pages에서 
+github desktop메뉴의 branch -> update from master를 해줘야 한다.
+
+그리고 push를 하게 되면 master의 변경사항이
+gh-pages에도 적용이 된다.
+
+※ 다만 github가 무료 서비스라서
+웹 상에서 바로 확인이 안 될 수 있다.
+시간이 조금 걸릴수도.
+
+
+gh-pages에 대해서 좀더 알아보자.
+gh-pages는 index.html이 없으면 실행되지 않는다.
+그리고 images 폴더 첫글자를 I 대문자로 하거나
+css폴더의 첫글자 C를 대문자로 하거나 하면
+컴퓨터에서는 잘되는데
+gh-pages에서는 안될거임.
+
+
+
+
+다시 정리해서
+master branch로 가서 코드를 변경하고
+변경된 코드를 commit하고
+update from master를 해준다.
+마지막에 다시 gh-pages랑 master를 push하면
+두 개가 같은 시점에 있게 된다.
+
+만약에 실수로 엇갈렸다고 해도 방법은 있다
+gh-pages에서 master로.
+
+master branch를 선택하고
+branch메뉴에서 'merge into current branch' 선택 
+그리고 'gh-pages'를 선택하면 된다.
+그러면 gh-pages로부터 master가 업데이트 될거다.

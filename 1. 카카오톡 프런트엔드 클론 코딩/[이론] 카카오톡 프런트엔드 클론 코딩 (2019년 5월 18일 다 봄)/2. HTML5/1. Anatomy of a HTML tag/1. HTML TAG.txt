@@ -1,0 +1,29 @@
+먼저 index.html을 만들어준다.
+
+※ 왜 index인가?
+
+웹서버들이 index파일을 제일 먼저 찾도록 설계되어있기 때문!
+디폴트 값으로 그렇게 설정되어있음
+
+
+그럼 TAG(태그)의 생김새는?
+
+<이름 속성 = "값"> 내용 </이름>
+이렇게 태그를 열고 닫기 때문에, 태그 사이에 위치한 컨텐츠가 
+바로 태그가 명칭하는 것임을 알 수 있다
+
+가장 간단한 태그 예시
+
+제목 태그
+<title> This is the title of the document </title>
+
+문단 태그
+<p>어쩌구 저쩌구</p>
+
+링크 태그
+<a href = "https://google.com">Go to google</a>
+-> 이건 같은 창에서 구글이 열린다
+
+attribute(속성)을 활용하면
+<a href = "https://google.com" target="_blank">Go to google</a>
+-> 새로운 탭에서 구글이 열린다.

@@ -1,0 +1,25 @@
+More 화면에 있는 avatar이미지는 커야함.
+Friends 화면의 내 프로필 사진만 크고
+Friends에 아래쪽에 있는 avatar이미지는 크면 안됨.
+
+Find 화면에 있는 avatar이미지는 모두 크면 안됨.
+
+
+링크에 있는 밑줄을 지워보자.
+styles.css에서 적용해야함.
+
+styles.css는 전역적인 스타일을 넣는 곳.
+
+
+align-items: stretch가 기본값.
+
+사진과 텍스트 사이의 여백은 15px정도
+
+
+.friend__content 에는 .friend__name과 .friend__bottom-text 두 개로 구성.
+
+위 아래로 표시되게끔 해주기 위해
+.friend__name을 display:block;으로 해준다. 
+그리고 두 텍스트 사이에 여백을 주기 위해
+.friend__name에 margin-bottom:5px; 정도 준다.
+그리고 bottom-text는 글자 색상을 바꿔준다.

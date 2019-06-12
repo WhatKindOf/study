@@ -1,0 +1,29 @@
+이번 시간에 해볼 것은 색상변경.
+
+addEventListener가 필요.
+
+array.from 메소드는 객체로부터 배열을 만든다.
+
+Array.from(colors).forEach(color)
+
+array.from이 array를 주면
+그 array 안에서 forEach로 color를 가질 수 있다.
+
+function handleColorClick(event) {
+	console.log(event.target.style);
+}
+
+Array.from(colors).forEach(color => color.addEventListener("click", handleColorClick));
+
+위와 같이 하게되면, 
+9개의 색상 버튼들이 "클릭" 되기를 기다리고 있으며,
+"클릭"이 되면 handleColorClick을 수행한다
+그리고 선택된 타겟의 스타일을 볼 수 있는데
+우리는 이 정보들 중에서 background-color를 활용할 것.
+
+이제 색상 정보를 받아왔으니 이 정보를 가지고
+context color를 변경해야한다.
+
+기본값으로는 strokeStyle = "#2c2c2c"; 로 설정해두고 있는데
+이 값을 덮어쓰고 변경하도록 할거임.
+

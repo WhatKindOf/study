@@ -1,0 +1,27 @@
+Transformations - HTML 문서의 element들을 변경, 모습이 변하는 효과.
+
+.box{
+	transform : rotate(20deg);
+}
+
+위처럼 하게 되면 박스를 20도 회전시켜서 보여줌.
+
+사용법 매우 간단.
+https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+
+
+앞서 배운 Transition이랑 결합해서 사용한다면 더욱 멋질듯
+
+.box{
+	transition: transform 3s ease-in-out;
+}
+
+.box:hover{
+	transform: rotate(45deg);  
+}
+
+3초동안 45도 회전하는 것을 볼 수 있다.
+
+또는 transform : rotate(1turn);  하게 되면 1바퀴 회전하는 것 가능.
+
+scale(.5, .5); 하게 되면 크기가 작아지는 것도 가능

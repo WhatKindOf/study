@@ -1,0 +1,32 @@
+Status Bar를 꾸며보도록 하자.
+
+먼저 몇가지 default값을 설정한다. (styles.css에)
+
+배경색은 흰색.
+왼쪽 오른쪽에 여백이 있다.
+width 20px 정도
+
+padding : 10px 20px;
+
+위 아래 10px, 좌 우 20px
+
+글자색은 그냥 검정색이 아닌 #020202를 사용
+
+
+status-bar.css를 만들고 이를 styles.css에서 import한다.
+
+status-bar.css에는 
+display:flex; 를 해주고
+justify-content: space-between; 해줌으로써 한 줄에 간격을 두고 위치하게 한다.
+
+그 다음 header와 간격이 있으므로 margin-bottom을 30px 정도로 설정
+
+
+텍스트 폰트와 사이즈 변경
+https://fonts.google.com/
+
+styles.css에 폰트를 import.
+body에 font-family : 'Open Sans' 입력.
+
+폰트 색상도 바꾸고, 배터리 레벨 글자 왼쪽에 여백도 설정.
+ 

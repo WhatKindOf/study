@@ -1,0 +1,15 @@
+내 프로필, 플러스친구, 친구 사이에 여백을 줄거임.
+
+내 프로필이랑 플러스친구, 친구 각각에 따로
+padding이나 margin을 주는 것 보다는
+
+사이에 끼여있는 
+플러스친구에
+padding과 margin, 테두리 색상을 설정해주는게 효과적
+
+
+.friend__now-listening에 
+opacity를 적용하게 되면
+글자색뿐만 아니라 테두리 색도 연해지기 때문에
+
+.friend__now-listening의 span에 따로 opacity를 적용해주도록 하자.

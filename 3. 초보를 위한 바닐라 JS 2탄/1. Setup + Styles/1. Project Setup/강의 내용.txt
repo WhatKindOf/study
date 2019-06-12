@@ -1,0 +1,24 @@
+일단 github에 paintjs로 새로운 repository를 생성.
+
+repository : paintjs
+description : Painting Board made with VanillaJS
+public
+initialize this repository with a README
+Git ignore : Node
+
+위와 같이 생성.
+
+
+VSCode로 해당 repository를 연다.
+
+첫번째로 index.html을 생성.
+두번째로 app.js 생성
+세번째로 styles.css 생성
+
+index.html에서 html:5 엔터를 입력하여 html document를 빠르게 작성.
+
+<title>태그에는 Paint JS로 작성
+<head>안에 <link rel="stylesheet" href="styles.css" />
+<body> 끝에 <script src="app.js"> </script>
+
+까지 작성해주면 기본 setup은 완료.

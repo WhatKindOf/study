@@ -1,0 +1,21 @@
+포지션에는 4가지 종류가 있다.
+
+1. static - 디폴트 값
+
+2. fixed - 고정, 어디든 '오버랩'해서 해당 위치에 고정.
+
+3. absolute - relative에 상대적으로 위치를 잡는다. 
+                만약 relative 포지션이 없을 경우, 문서의 본문 body에 맞춰서 포지션을 잡을 것이다.
+
+4. relative 
+
+※ 주의사항. 
+absolute 포지션을 부모 element에 상대적으로 사용하려면
+부모 element에게 relative 포지션을 먼저 설정해줘야 한다!
+그렇게 설정해줘야 자식 element가 부모 element 안에 위치함.
+
+
+absolute와 fixed의 차이점.
+fixed는 오버랩해서 화면 상에서 그 위치 고정
+absolute는 부모 element에 절대적 위치이기 때문에
+스크롤 하면 fixed와 달리 안보이게 됨.

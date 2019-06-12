@@ -1,0 +1,27 @@
+이번 시간에는 Fill 모드일때
+실제로 캔버스가 선택된 색상으로 채워지는 것을 해보도록 하자.
+
+fillRect( )라는 것을 활용할 것.
+fillRect( ) : width와 height에 의해서 결정된 사이즈로 (x, y) 위치에 
+색칠된 사각형을 그림
+
+fillRect사용법
+
+fillRect(x좌표, y좌표, width, height); 순으로 작성하면 된다.
+
+다만 fillRect는 strokeStyle의 값을 적용하지 못한다. (strokeStyle은 line을 위한 것)
+그래서 대신할 것을 찾아야 하는데, 
+그것은 fillStyle.
+
+
+그리고 주의할 점은
+현재 우리는 마우스 버튼이 눌러지고 뗐을때
+paint 되도록 했고
+
+클릭이 되면 fill이 되도록 해놨는데,
+
+마우스 버튼이 눌러지고 떼는 행동이나 클릭하는 행동이나 같아지게 되므로
+paint를 하고 싶어도 fill이 될 것이다.
+
+이를 막기 위해서는 현재 filling모드인지 체크해주는 부분이 필요하다.
+그래야 paint도 사용할 수 있다.

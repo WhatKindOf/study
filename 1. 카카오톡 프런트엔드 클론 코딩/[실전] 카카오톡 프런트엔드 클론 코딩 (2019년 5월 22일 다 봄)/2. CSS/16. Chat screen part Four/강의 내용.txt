@@ -1,0 +1,32 @@
+오! 저번 강의에서 padding의 크기에 따라
+되다가 안되다가 하던 shadow를 고쳤다고 한다.
+
+
+문제는 text가 <div>안에 있어서 그렇다고 한다.
+
+text는 <span>안에 있어야 한다.
+
+<div>를 <span>으로 바꾸고 나니 잘 작동한다.
+
+
+이제 shadow문제를 해결했으니
+gradient 효과를 줘보도록 한다.
+
+참고 사이트
+https://uigradients.com
+
+이 사이트에서 원하는 것을 골라 CSS에 넣을 수 있다.
+
+생각과는 다르게 gradient는
+background-color로 주는 것이 아니라
+background-image로 준다!
+다음과 같은 형태
+
+background-image : linear-gradient(#fc00ff, #00dbde)
+근데 이렇게 하게되면 gradient효과가 위에서 아래로 온다.
+
+왼쪽에서 오른쪽으로 적용되게 하고 싶다면?
+background-image : linear-gradient(to right, #fc00ff, #00dbde)
+
+오른쪽에서 왼쪽이라면
+background-image : linear-gradient(to left, #fc00ff, #00dbde)

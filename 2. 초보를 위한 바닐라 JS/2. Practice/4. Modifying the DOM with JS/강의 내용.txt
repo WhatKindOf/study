@@ -1,0 +1,29 @@
+이전 강의에선 HTML을 DOM 객체로 바꿀 수 있다는 걸 봤다.
+
+이번 시간엔 title이라는 객체에서 너가 가질 수 있는 모든 가능성을 보여준다.
+
+
+console.dir(title); 하게 되면 
+할 수 있는 다양한 것들을 볼 수 있다.
+
+그 중에서 style을 보게 되면
+JavaScript 객체 표기법을 볼 수 있다.
+
+연습해보자
+
+title.style.color = "red"; 하게 되면
+HTML의 <h1>태그의 색상이 빨간색으로 바뀐다.
+
+
+getElementById 말고도 getElementByClassName도 있고
+getElementByTagName도 있다.
+TagName에는 h1, h2, body 같은 것들
+
+document.querySelector는 노드의 첫번째 자식을 반환.
+이걸 작동하게 되면
+document로 가서 모든 자식들 중에서 찾으려고 할거임.
+
+document.querySelector("#title");     ID로 찾을 때
+document.querySelector(".title");      Class Name으로 찾을 때
+
+null(없는 것)은 undefined(정의할 수 없는 것)와 같은 것.

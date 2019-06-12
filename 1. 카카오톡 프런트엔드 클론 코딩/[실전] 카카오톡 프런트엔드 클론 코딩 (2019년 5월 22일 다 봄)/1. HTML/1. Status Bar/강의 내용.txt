@@ -1,0 +1,27 @@
+index.html은 가장 처음에 열리는 페이지
+
+이 수업에서는 '채팅 목록' 화면.
+
+
+먼저 전체 구조를 만들고 예제를 만들거다.
+
+Header, Status Bar, Navigation Bar는 자주 사용되므로 이것부터 만들기 시작.
+
+
+html:5 입력하고 엔터누르면 자동으로 html5 코드 틀이 작성된다.
+
+
+언어 : 영어
+charset : UTF-8
+title : Chats | Kakao Clone
+
+
+fontawesome.com/icons 에서 아이콘을 다운받을 수 있다.
+
+
+-(대쉬) 를 단어를 나누기 위해 사용.
+ex.  battery-level
+
+__ (under score)는 부모 자식을 나누기 위해 사용.
+ex. status-bar__battery-level
+

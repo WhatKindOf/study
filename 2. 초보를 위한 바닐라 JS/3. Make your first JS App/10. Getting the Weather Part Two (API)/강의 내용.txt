@@ -1,0 +1,77 @@
+이번 시간에는 API 사용법을 익혀본다.
+
+API (Application Programming Interface)는 
+다른 서버로부터 손쉽게 데이터를 가져올 수 있는 수단.
+(오직 데이터만 가져온다.)
+
+https://openweathermap.org/ 
+해당 사이트에서 데이터를 가져올 것이다.
+
+
+JavaScript를 이용해서 특정 URL을 호출하는 방법?
+(이 부분이 바로 JavaScript가 강력해진 이유)
+
+JavaScript는 웹사이트로 Requese를 보내고 응답을 통해서 데이터를 얻을 수 있는데
+가져온 데이터를 Refresh없이도 나의 웹사이트에 적용시킬 수 있기 때문.
+
+예를들어, 이메일을 확인할 때 웹사이트를 새로고침하지 않아도 
+실시간으로 메일이 오는 것을 확인할 수 있다.
+(왜냐하면 JavaScript가 보이지 않는 곳에서 계속 데이터를 가져오고 있기 때문)
+
+
+데이터를 얻는 방법은 간단.
+fetch를 사용하면 된다.
+fetch( ) 괄호 안에 가져올 데이터 url을 넣어주면 된다.
+fetch(`https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}`)
+※ 따옴표가 아니라 벡틱 (`)을 사용할 것.
+
+lat={lat}&lon={lon} 에 실제 넣고자하는 변수를 넣어주면 된다.
+lat=${lat}&lon=${lon}
+그리고 이 뒤에 App ID를 넣어줘야 한다.
+
+App ID에 API Key를 넣어주게 되면, API를 제공하는 쪽에서 판단하게 된다.
+무리하게 요청하지는 않는지 등을 판단.
+
+실행하고 나서 크롬의 검사탭에서 network 쪽에서 확인가능하다.
+
+fetch(
+    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`
+  );
+
+units=metric은 사용하고 싶은 단위 (metric은 미터법)
+
+
+이제 then이라는 것을 사용해볼 것이다.
+그리고 이 then은 함수를 하나 호출할 건데,
+언제 할거냐? - 데이터가 우리한테 넘어왔을때.
+왜냐하면 데이터가 들어오는데 시간이 좀 걸리는 경우도 있다.
+
+then이 하는 역할은 기본적으로 함수를 호출하는 것이지만,
+데이터가 완전히 들어온 다음 호출하는 것.
+
+fetch가 완료되길 기다리고 나서 then에 작성된 함수가 실행된다.
+
+then을 사용하지 않으면 fetch가 완료되길 기다리지 않을테고,
+fetch는 정상적으로 완료되지 않을 수 있다.
+
+fetch(
+    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`
+  ).then(function(json) {
+    console.log(json);
+  });
+
+위와 같이 실행하게 되면, then에서 json을 출력하는데
+이는 network 정보만 볼 수 있다.
+
+우리가 원하는 것은 JSON 데이터다
+
+json.json( )
+
+
+
+JavaScript에서 뭔가가 끝나길 기다리는 방법은, then을 사용하는 것.
+
+JSON.parse( )는 local storage에 string으로 저장되어있는 것을
+object로 반환해줌.
+
+stringify는 object를 string으로 변환.

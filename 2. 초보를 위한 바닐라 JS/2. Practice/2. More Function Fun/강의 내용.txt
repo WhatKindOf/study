@@ -1,0 +1,74 @@
+"쌍따옴표도 string, '따옴표도 string인데,
+
+"로 시작했으면 끝도 "로 끝내야 하고
+'로 시작했으면 끝도 '로 끝내야 함.
+
+
+console.log( )에 두 가지 방법이 있다.
+
+앞에서 배운
+console.log("hello", name);
+
+이전에는 다음과 같이 썼다.
+console.log("hello" + name);
+
+그런데 이렇게 사용하는게 지루하고 싫증났다고 한다.
+그래서 JavaScript가 생각해낸 것은 백틱(`)이다.
+
+백틱을 사용하여 다음과 같이 작성한다.
+
+console.log(`Hello ${name} you are ${age} years old`);
+
+${ } 사이에 변수를 넣어주고
+`` 사이에 모든 문장을 넣어주면 된다.
+
+
+이제 return에 대해서 알아보자
+
+function sayHello(name, age){
+  console.log(`Hello ${name} you are ${age} years old`);
+}
+
+const greetNicolas = sayHello("Nicolas", 14);
+
+console.log(greetNicolas);
+
+이렇게 하면 결과는
+Hello Nicolas you are 14 years old
+undefined
+가 나온다.
+
+함수에 의한 출력문은 잘 나왔는데,
+greetNicolas는 undefined가 나왔다.
+
+이는 greetNicolas를 초기화할때 
+sayHello의 반환값으로 아무것도 받지 못했기 때문
+
+function sayHello(name, age){
+  return `Hello ${name} you are ${age} years old`;
+}
+
+const greetNicolas = sayHello("Nicolas", 14);
+
+console.log(greetNicolas);
+
+이렇게 return 시켜주면 greetNicolas에 값이 들어간다.
+
+
+
+그러면 이번엔 console.log( )처럼 만들어 보자.
+해보고 싶은 건 calculator라는 객체를 만들고
+그 안에 plus라는 함수를 만들고 싶다.
+그래서 calculator.plus( ) 를 사용하고 싶다.
+
+const calculator = {
+  plus : function(a, b){
+    return a + b;
+  }
+}
+
+const result = calculator.plus(5, 6);
+
+console.log(result);
+
+

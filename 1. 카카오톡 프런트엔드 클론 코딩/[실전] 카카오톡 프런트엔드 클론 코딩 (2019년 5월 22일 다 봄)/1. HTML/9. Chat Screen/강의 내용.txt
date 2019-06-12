@@ -1,0 +1,20 @@
+chat.html은 settings.html과 유사하므로
+settings 내용을 복붙해오고 수정함.
+
+
+헤더의 제목을 변경해준다.
+
+index.html에서 채팅창을 열게 되면
+chat.html로 넘어오도록 한다.
+
+
+헤더에 검색 아이콘 옆에 햄버거 메뉴 아이콘을 추가하도록 한다.
+
+
+입력받는 것은 text area랑 input이 있는데
+text area는 너무 넓기 때문에
+작은 글쓰는 공간이라면 input을 활용하자.
+
+placeholder는 입력칸에 기본으로 떠있는 안내문
+
+항상 github desktop에 commit하는걸 잊지말길

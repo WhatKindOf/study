@@ -1,0 +1,35 @@
+position: fixed; 가 적용된 container를
+가운데 정렬하는 방법.
+
+margin: 0 auto; 
+left: 0; 
+right: 0;
+
+위와 같이 해주면 된다.  
+
+
+박스에 그림자 효과를 주는데
+
+box-shadow: (가로)px (세로)px (blur)px rgba(0, 0, 0, 0.6)
+
+rgba에서 마지막 0.6자리는 opacity값
+나머지 3개는 red green blue 값
+
+
+input:focus  -  input칸이 선택되어진 상태
+outline:none;
+
+기존에는 클릭된 상태면 outline이 파란색 테두리가 뜸
+그걸 없애주는 것.
+
+
+채팅창에 멋진 배경을 넣어줄건데
+toptal.com (subtle patterns) 라는 곳에 가면 많은 패턴들이 있다.
+
+
+.chat에 min-height를 줄거임.
+min-height: 100vh;
+
+chat class가 적용된 div에
+viewport의 100% 높이를 주는 것
+viewport는 screen.

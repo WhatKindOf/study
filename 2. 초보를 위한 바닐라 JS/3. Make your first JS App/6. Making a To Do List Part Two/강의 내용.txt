@@ -1,0 +1,90 @@
+이제 본격적으로 화면 위에 무언갈 띄워보자.
+
+일단 앞서 생성한 할일 목록을 저장하는 것부터 시작.
+
+그리고 이 할일 목록은 array가 되야하지.
+말그대로 To-Do List이기 때문에 array로 저장한다.
+
+
+html에서 사용자가 할일을 입력하면, 
+그건 일단 toDos 배열에 추가될 것이다
+(해야할 일을 입력할 때마다 toDos라는 배열에 추가될 것.)
+
+
+const toDos = [ ]; 생성만 해두고
+
+할일이 입력되고 엔터가 눌려지게 되면
+
+const toDoObj = {
+	text: text,
+	id: toDos.length + 1
+};
+
+toDos.push(toDoObj);
+배열에는 push라는 함수가 있어서,
+push를 쓰게 되면 array안에 element 하나를 넣어줄 수 있다.
+
+
+
+그리고 계속 생성되는 <li>태그들에도 id를 줘야한다.
+왜냐하면 나중에 삭제버튼을 클릭했을 때 어떤 <li>를 지워야 하는지 
+알 수 있으니까.
+
+
+local storage에는 JavaScript의 Data를 저장할 수 없다.
+오직 string만 저장할 수 있다.
+
+그래서 만약에 local storage에 
+key값으로 hello, value값으로 true를 저장하면
+true가 출력될 때 boolean값이 아니라
+"true"로 나오면서 텍스트로써 나오게 된다.
+
+JavaScript는 local storage에 있는 모든 데이터를 string으로 저장하려고 함.
+
+
+그래서 우리는 우리 object가 string이 되도록 만들어야함.
+그걸 위해서 아주 좋은 트릭인 JSON.stringify를 쓸거다.
+JSON에 대해선 나중에 알려줄게
+
+지금 알아야할 것은 JSON.stringify는 JavaScript object를 string으로 바꿔준다는 것.
+
+저장이 성공적으로 이루어졌다면
+이제 해야할 것은 다시 불러오는 것
+그런데 그냥 localStorage.getItem( )해서 불러오게 되면
+그냥 string으로 불러온다.
+그래서 불러올때에도 JSON을 사용해야 한다.
+
+JSON은 JavaScript Object Notation의 준말.
+데이터를 전달할 때, JavaScript가 그걸 다룰 수 있도록 Object로 바꿔주는 기능.
+그리고 JavaScript의 Object를 string으로 변환해주기도 한다.
+
+
+array가 가진 것 중 forEach라는 것이 있다.
+
+forEach라는 것은 array에 담겨있는 것을 한번에 하나씩 함수를 실행시켜주는 것.
+
+작성방법은 다음과 같다.
+parsedToDos.forEach(function(toDo) {
+	console.log(toDo.text);
+});
+
+예를 들어 위처럼 작성하게 되면
+parsedToDos라는 배열에 있는 각각의 객체를 toDo라는 이름의 매개변수로 함수를 실행한다. 객체의 수만큼 실행된다.
+
+
+위처럼 작성을 해도 되고 함수를 따로 작성해도 된다. 다음과 같다.
+
+function something(toDo) {
+	console.log(toDo.text);
+}
+
+parsedToDos.forEach(something);
+
+이렇게 하면 parsedToDos 배열에 있는 각각의 객체에 대해 something이라는 
+함수를 실행하게 된다.
+
+
+
+
+
+

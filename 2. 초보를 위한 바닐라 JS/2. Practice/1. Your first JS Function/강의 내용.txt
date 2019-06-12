@@ -1,0 +1,109 @@
+그럼 앞서 작성한 코드를 다시 보자.
+
+const nicoInfo = {
+	name: "Nico",
+	age: 33,
+	gender: "Male",
+}
+
+console.log(nicoInfo.gender)
+
+
+여기서 비슷한 점은 무엇인가!
+
+console.(점)log / nicoInfo.(점)gender
+
+console은 Object이다
+nicoInfo 또한 Object이다.
+
+그리고 log는 gender처럼
+console 객체 안에 있는 key이다.
+
+이 경우에 log는 function(함수)다.
+
+
+console.log( )로 console을 찍어보면 뭐라고 나올까?
+console.log(console)
+-> 
+t {
+	log: [Function],
+	error: [Function],
+	info: [Function],
+  	warn: [Function],
+  	dir: [Function],
+  	time: [Function],
+  	timeEnd: [Function],
+  	trace: [Function],
+  	assert: [Function],
+  	clear: [Function],
+  	stdout: { [Function] clear: [Function] },
+  	_times: {}
+}
+
+console이라는 객체는 여러 함수로 이뤄진 것을 볼 수 있다.
+
+그럼 console.log는 어디서 온 것일까?
+console.log, alert 등 많은 함수들은
+내장함수(built-in function)이다.
+
+아! 함수란? 어떤 것의 기능, 기능적인 것
+어떤 것을 수행하려는 한 부분.
+원하는 만큼 쓸 수 있다.
+
+
+ex. 비효율적인 코드
+console.log('Grettings Nicolas')
+console.log('Grettings Jun')
+console.log('Grettings Liyn')
+console.log('Grettings Dal')
+
+바꿀 때 4개를 일일이 바꿔줘야 함.
+귀찮음. 비효율적.
+
+함수를 만들고 싶은데 어떻게 만들 수 있을까?
+
+* JavaScript 함수 정의하는 문법
+function sayHello( ){
+}
+
+console.log( )도 함수인데
+console이라는 객체에 속한 함수이며,
+매개변수가 있어야 그걸 출력해줌.
+
+( )안에 작성되는 것을 인자(argument)라고 한다.
+인자는 함수에 전달되는 것.  변수같은 것.
+우리가 주는 값을 저장함.
+
+
+인자를 사용할려면 함수를 만드는 시점에
+argument를 넣어줘야함.
+
+function sayHello(potato){
+	console.log('Hello');
+}
+
+potato는 변수명같은거라고 보면 된다.
+parameter 혹은 argument
+
+함수 안에서 사용하게 될 이름
+
+
+function sayHello(potato){
+	console.log('Hello', potato);
+}
+
+sayHello("Nicolas");
+
+Nicolas가 potato로 전달되고 
+이는 아래 console.log에 다시 전달되어 출력된다.
+
+
+이처럼 인자는 함수에게 외부에 있는 데이터를 주는 방법.
+
+인자 이름은 아무것이나 작성해도 되고
+여러 개가 와도 된다. 단 콤마로 구분지어줘야함.
+
+
+console.log는 인자를 어떤 타입을 주든, 몇개를 주든 실행 가능
+
+우리가 만든 함수 sayHello는 현재는 potato 1개뿐

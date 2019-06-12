@@ -1,0 +1,51 @@
+오늘 강의에서는 JavaScript의 민낯을 보도록 하자.
+
+일단 이 언어는 오래되었다.
+
+업데이트를 할 수 없는 오래된 것의 경우
+임시방편으로 떼워야 하는 경우가 있다.
+
+예를 들어
+JavaScript를 쓰는 많은 웹사이트들이 있다.
+그 중 몇은 오래된 버전의 JavaScript를 쓸거고
+그걸 전부 업데이트 해 줄 수 없기 때문에
+180도 다르거나 모던하게 바꿔줄 수 없다.
+
+그럴 경우, 많은 인터넷 사이트들이 망가질 거다. (엑박)
+우린 그걸 원하지 않고.
+
+
+'Vanilla JavaScript'는 브라우저를 통해 제공된 JavaScript라고 보면 된다.
+온갖 임시방편들과 지저분한 것들 - 항상 사람들이 언급하는 것들 ㅋㅋ
+
+어떤 사람들은 Coffee Script 같은 걸 배운다.
+
+
+Library나 Framework를 활용할 수 있지만 배우기 쉽다.
+그렇기에 이런 게 없는 Vanilla JavaScript는 어렵다.
+
+그래서 오히려 이걸 처음에 배워두는게 좋을 것 같다.
+
+
+일단 가벼운 예시를 보도록 하자.
+만약 JavaScript에서 HTML ID를 갖고 싶으면
+document.getElementById('test-table');
+이런 형태로 작성하면 된다.
+
+이 외에 Dojo, Prototype JS, Ext JS, jQuery, YUI, MooTools 같은 것들도 있는데
+제각기 코드가 다 다르다.
+
+다시 한번 Vanilla JavaScript를 가르치는 이유는
+Make-up(대체할 수 있는 것)이 아닌 실질적인 것을 가르치고 싶어서.
+
+그리고 Vanilla JS가 다른 것들에 비해 월등히 빠르다
+Vanilla JS - 약 1200만개가 넘는 Operation을 1초에 할 수 있다.
+Dojo - 약 500만개가 넘는 Operation을 1초에 할 수 있다.
+Prototype JS - 약 290만개가 넘는 Operation을 1초에 할 수 있다.
+Ext JS - 약 90만개가 넘는 Operation을 1초에 할 수 있다.
+jQuery - 약 35만개가 넘는 Operation을 1초에 할 수 있다.
+
+이렇기 때문에 Vanilla JS를 배워야 하는 이유이고,
+이 것을 습득해놓으면 REACT와 같은 언어로 넘어갈 때도 문제없을 것이다.
+
+Vanilla JS를 배우는 것? - 웹에서의 기초가 되는 언어를 배우는 것과 같다.

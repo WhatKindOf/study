@@ -1,0 +1,31 @@
+메시지 입력칸에 좀 더 멋있는 transition을 해보자.
+
+일단 메시지 입력창을 전면 수정해야한다.
+
+chat.html
+메시지 입력칸 코드에서
+
+<input>태그를 아이콘 3개보다 가장 앞으로 오게 한다.
+
+이렇게 하는 이유는?
+
+<input>이 icon들보다 앞에 있으면
+<input>에 무언가가 발생했을 때 icon을 숨길 수가 있다.
+
+이게 무슨 말인가 하면,
+.chat__write:focus - 즉 <input>태그가 눌려졌을때,
+chat__write 의 sibling 중 하나를 선택할 수 있는데,
+코드 상에서 <input>태그보다 아래 쪽에 작성된 코드의 태그들만 선택할 수 있다.
+
+즉, 코드를 역행할 수 없는 것. (절차적)
+CSS는 위에서 아래로 내려오면서 실행되니까.
+
+.chat__write:focus ~
+
+에서 ~ 표시는 sibling을 선택할때 사용하는 것.
+
+
+이제 transition을 추가.
+display:none; 보다 opacity를 활용해야 한다.
+그 이유는 display:none;을 하게 되면 다른 애니메이션을 할 수 있는 방법이 없다.
+opacity로 해야 애니메이션을 활용할 수 있다.

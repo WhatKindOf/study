@@ -1,0 +1,44 @@
+HTML과 CSS를 연결하는 2가지 방법
+
+1. inline   (구리다)
+
+<head>
+	<style>
+		body {
+			background-color: red;
+		}
+	</style>
+</head>
+
+head 안에 style을 열고 닫는다.
+style 태그는 CSS를 HTML 문서 상단에 작성하는 걸 가능하게 해줌.
+
+괜찮은 방법인 것 같아 보이지만 별로인 이유?
+
+여러 HTML 문서가 같은 배경색을 사용한다고 예를 들면,
+해당 css, <style>태그를 모든 HTML 문서에 복붙 해야함. 
+
+비효율적, 시간 소요.
+
+
+2. external   (이게 훨씬 좋다)
+
+그냥 외부에 styles.css 파일을 별도로 하나 만듦.
+
+그리고 HTML 문서들의 head에서 연결해주면 됨.
+
+이렇게 해두면 styles.css만 변경해도 각 HTML 문서에도 적용이 될거임.
+
+<head>
+	<link href="styles.css" rel="stylesheet">
+</head>
+
+위의 link 태그를 적용하고자 하는 모든 HTML 문서 HEAD에 넣어주면 된다.
+
+styles.css 파일에는 selector와 property 작성해주면 됨
+
+h1 {
+	color: green;
+}
+
+

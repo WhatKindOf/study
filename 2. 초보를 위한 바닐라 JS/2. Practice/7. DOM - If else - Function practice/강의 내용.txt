@@ -1,0 +1,25 @@
+이번 시간엔
+title의 색상 체크를 해볼 것이다.
+
+현재 색상이 무엇인지, 동일한지 체크해보고
+다른 색상으로 바꾸는 것을 해볼 것이다.
+
+https://flatuicolors.com/ - 색상 코드 얻을 수 있는 사이트
+
+
+이벤트의 근원을 알고 싶으면 MDN을 찾아보길.
+https://developer.mozilla.org/ko/docs/Web/Events
+
+
+이벤트 중에는 인터넷 online인지 offline인지도 구분함
+
+function handleOffline( ){
+	console.log("lala");
+}
+
+function handleOnline( ){
+	console.log("welcome back");
+}
+
+window.addEventListener("offline", handleOffline);
+window.addEventListener("online", handleOnline);

@@ -1,0 +1,5 @@
+이 수업을 듣기위한 필수 조건 : 초보를 위한 Vanilla JavaScript를 수강.
+(왜냐하면 기초지식 variable 같은 것들은 이제 설명 안 하기 때문)
+
+소프트웨어로는 Visual Studio Code, GitHub Desktop, 구글 크롬 필요
+

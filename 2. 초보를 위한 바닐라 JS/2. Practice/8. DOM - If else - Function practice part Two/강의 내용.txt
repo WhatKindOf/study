@@ -1,0 +1,128 @@
+이전 강의까지 우리가 다룬 것은
+JavaScript로 CSS를 조작하는 법을 배워봤는데
+보통 이를 싫어함.
+
+HTML은 HTML을 다루고
+CSS은 CSS을 다루고
+JavaScript는 로직을 처리하게 하고 싶다.
+
+현재 <h1>태그에는 클래스 이름이 없는데,
+조건문을 통해서 타이틀이 클릭되었을 때 클래스 이름이 없을 때는
+클래스 명을 clicked라고 해준다.
+반대로 이미 클래스명이 clicked라면 클래스명을 없애준다.
+
+CSS파일에 이미 .clicked { color: #7f8c8d;} 라고 작성이 되어있기 때문에
+만약 클릭이 되면 클래스명은 clicked가 되고 
+<h1>태그의 색상은 변경될 것이다.
+
+const title = document.querySelector("#title");
+
+const CLICKED_CLASS = "clicked";
+
+function handleClick() {
+  const currentClassName = title.className;
+
+  if (currentClassName !== CLICKED_CLASS) {
+    title.className = CLICKED_CLASS;
+  } else {
+    title.className = "";
+  }
+}
+
+function init() {
+  title.addEventListener("click", handleClick);
+}
+
+init();
+
+
+이제 실패사례를 보여줄 것이다.
+<h1>태그에는 이미 class="btn"이라고 클래스명을 가지고 있고
+CSS에서 .btn{ cursor:pointer;} 라고 설정해놓은 값이 있는데
+
+앞서 생성한 JavaScript 때문에 "btn"이라는 클래스명은 잃어버리고
+clicked라는 다른 클래스명을 가지므로
+cursor:pointer라는 속성은 잃어버리게 된다.
+
+
+그래서 우리는 classList를 사용할 것이다.
+classList.add(클래스명) 을 하게 되면
+기존에 있던 클래스명 뒤에 새로운 클래스명을 추가하게 된다.
+
+그리고 classList.remove(클래스명)을 하게 되면
+해당 클래스명을 제거한다.
+
+const title = document.querySelector("#title");
+
+const CLICKED_CLASS = "clicked";
+
+function handleClick() {
+  const currentClassName = title.className;
+
+  if (currentClassName !== CLICKED_CLASS) {
+    title.classList.add(CLICKED_CLASS);
+  } else {
+    title.classList.remove(CLICKED_CLASS);
+  }
+}
+
+function init() {
+  title.addEventListener("click", handleClick);
+}
+
+init();
+
+하지만 위처럼 해도 문제 발생!
+기존 btn에다가 clicked를 추가하게 되면
+btn clicked가 되버리니 
+조건문에서 remove는 실행될 일이 없다.
+
+그래서 우리는 contains라는 객체가 필요하고,
+다음과 같이 바꿔주면 된다.
+
+const title = document.querySelector("#title");
+
+const CLICKED_CLASS = "clicked";
+
+function handleClick() {
+  const hasClass = title.classList.contains(CLICKED_CLASS);
+
+  if (hasClass) {
+    title.classList.remove(CLICKED_CLASS);
+  } else {
+    title.classList.add(CLICKED_CLASS);
+  }
+}
+
+function init() {
+  title.addEventListener("click", handleClick);
+}
+
+init();
+
+classList.contains(클래스명)은 해당 클래스명을 가지고 있다면 true를
+가지고 있지 않다면 false를 반환한다.
+
+
+
+그런데 가장 코드를 짧게 할 수 있는 방법이 있다.
+toggle이 그 주인공. 이 것이 우리가 했던 코드를 요약해줄 수 있다.
+
+title.classList.toggle(클래스명);
+이는 해당 클래스명이 거기 있는지 체크해서 없으면 add
+있으면 remove해준다.
+
+const title = document.querySelector("#title");
+
+const CLICKED_CLASS = "clicked";
+
+function handleClick() {
+  title.classList.toggle(CLICKED_CLASS);
+}
+
+function init() {
+  title.addEventListener("click", handleClick);
+}
+
+init();
+

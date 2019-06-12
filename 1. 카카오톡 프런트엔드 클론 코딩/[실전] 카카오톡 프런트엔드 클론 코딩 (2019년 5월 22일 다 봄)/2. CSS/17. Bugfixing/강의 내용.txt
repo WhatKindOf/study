@@ -1,0 +1,17 @@
+대화창에서 상대방 메시지, 나의 메시지가
+여러개 있을 때
+margin-bottom이 원하는 대로 작동하지 않았는데
+
+이 이유는 <span>때문이라고!
+
+이게 무슨 말이냐면,
+height가 block 요소가 아니라서 그렇다.
+
+그래서 text처럼 공간을 차지하게 되는데,
+그렇기 때문에 text의 margin을 무시하게 된다.
+
+
+chat.css에서 message__bubble에 display : block을 해주면 됨
+이렇게 해주면 이제 box로 인식하게 된다.
+
+이제 CSS 파트는 끝이 났다.

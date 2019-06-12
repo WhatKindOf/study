@@ -1,0 +1,85 @@
+이번 시간에는 Momentum을 만들어보자.
+
+일단 먼저 시작해볼 것은 시계 만들기.
+
+그리고 여기선 CSS를 하지 않을 것이다.
+
+앞서 실습할 때 만들었던 index.html에 시계를 만들어볼 것이다.
+
+index.js를 clock.js로 바꿔주고
+이를 html에서 불러오도록 한다.
+
+<script src="clock.js"></script>
+
+
+clock.js에서 노마드가 항상 먼저 하는건
+init 함수를 만들고 사용하는 코드를 작성해놓는다.
+
+그리고 html에 <div>태그 생성.
+
+HTML과 JavaScript에서 class 이름을 어떻게 쓰는지?
+노마드는 보통 class이름을 clock이라고 쓰지 않는다.
+class이름을 CSS에서도 동일하게 쓰고 싶고,
+JavaScript에서도 사용하고 싶기 때문에.
+그래서 class명을 js-clock이라고 하고 JavaScript에서 다룰거임.
+
+
+document.querySelector를 이용하여 js-clock을 JavaScript에서 가져올 수 있고
+이를 다시 document가 아닌 clockContainer의 querySelector를 이용하여
+js-clock의 자식 태그를 찾을 수 있다.
+
+const clockContainer = document.querySelector(".js-clock");
+const clockTitle = clockContainer.querySelector(".js-title");
+
+위의 코드는 다음과 같이 쓸 수 도 있다.
+
+const clockContainer = document.querySelector(".js-clock"),
+ clockTitle = clockContainer.querySelector(".js-title");
+
+
+그리고 이제 해야할 것은 현재 시각을 얻는 것.
+현재 시간을 얻기 위해서 콘솔창을 사용할 것이다.
+콘솔창에 다음과 같이 나온다.
+
+> const date = new Date( );       // Date는 클래스임.
+> date
+<- Mon Oct 29 2018 13:44:03 GMT+0900 (Korean Standard Time)
+> date.getDay( )
+<- 1
+여기서 1은 월요일을 뜻한다.
+> date.getDate( )
+<- 29
+29일을 뜻함.
+> date.getHour( )
+<- 13
+> date.getMinutes( )
+<- 44
+
+그런데 위 코드의 문제점이 있다.
+const로 생성했기 때문에 초기화 당시 시간으로 고정되어 있는 점.
+유동적인 시간을 받아오는 것에는 부적합.
+
+const clockContainer = document.querySelector(".js-clock");
+const clockTitle = clockContainer.querySelector(".js-title");
+
+function getTime() {
+  const date = new Date();
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const seconds = date.getSeconds();
+  clockTitle.innerText = `${hours}:${minutes}:${seconds}`;
+}
+
+function init() {
+  getTime();
+}
+
+init();
+
+위의 코드로 html에 현재 시각이 뜬다.
+하지만 문제점이 여전히 존재.
+새로고침해야만 새롭게 현재시각을 가져온다.
+
+진짜 원하는 건 새로고침없이 date를 계속해서 다시 받기를 원함.
+다음 시간에 실시간으로 시간이 업데이트되는 걸 해보도록 하자.
+

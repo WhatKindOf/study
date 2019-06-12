@@ -1,0 +1,32 @@
+Navigation Bar를 바꿔보자.
+
+먼저 nav-bar.css 파일 생성.
+
+항상 새로운 css파일이 생성되면 
+styles.css에 import 해준다.
+
+
+status-bar와 header와 달리 
+nav-bar는 항상 페이지에 있을 필요가 없다.
+
+기존에는 nav-bar가 body에 둘러싸여 있다.
+
+하지만 이걸 원치 않음.
+
+nav에 있는 padding을 없앨거임.
+그리고 nav를 sticky하게 만들거다. - position : fixed;
+
+position:fixed;
+width:100%;
+left:0px;
+bottom:0px; 
+해주면 아래에 위치하게 되는데
+
+만약 위에 위치하게끔 해주고 싶으면
+bottom대신 top을 해주면 된다.
+
+
+position:fixed를 할 때 반드시 기억해야 할 것은 
+width를 설정해줘야 한다.
+기본적으로 position:fixed는 element를 기존의 다른 것들에서부터 벗어나서
+다른 레이어에 올려놔야하니까.

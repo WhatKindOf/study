@@ -1,0 +1,17 @@
+CSS states에 대해 배워보자.
+
+4가지 상태가 있다
+
+1. active - 박스를 클릭할 때, 상태가 변한다.
+.box:active{
+	background-color : green;
+}
+
+2. focus - 폼이나 링크를 활성화 시키거나 선택하면 적용된다.
+
+3. visited
+
+4. hover - 그 박스 위에 뭔가 올라가면, 설정한 값으로 바뀌는 걸 볼 수 있다
+.box:hover{
+	background-color : pink;
+}

@@ -1,0 +1,39 @@
+[npm 사이트]
+https://www.npmjs.com/
+
+
+[Node.js 사이트]
+https://nodejs.org/en/
+
+
+[Yarn 사이트]
+https://yarnpkg.com/lang/en/
+
+
+
+[Node JS와 npm 설치 참고 사이트]
+https://itstory.tk/entry/Ubuntu-1604-nodejs-%EC%99%80-npm-%EC%84%A4%EC%B9%98
+
+
+1. sudo apt-get update
+
+2. sudo apt-get install nodejs
+
+3. nodejs -v
+
+4. sudo apt-get install npm
+
+5. yarn 설치 참고 사이트
+http://www.hanryang-blog.com/33/
+
+sudo apt remove cmdtest
+
+sudo apt remove yarn
+
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
+sudo apt-get update && sudo apt-get install yarn
+
+yarn install

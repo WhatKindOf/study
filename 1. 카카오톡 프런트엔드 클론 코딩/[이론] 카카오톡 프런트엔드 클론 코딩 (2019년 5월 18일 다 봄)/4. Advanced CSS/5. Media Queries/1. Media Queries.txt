@@ -1,0 +1,27 @@
+브라우저가 큰지 작은지 알아내는 방법.
+
+큰 화면을 위한 CSS가 있고, 작은 화면을 위한 CSS가 있다.
+데스크탑                         모바일
+
+
+만약 사용자가 모바일 환경이라면 다음과 같이 작성하자.
+
+@media screen and (min-width:320px) and (max-width:640px){
+	body{
+		background-color : blue;
+	}
+}
+
+보는 화면이 최소 320px 최대 640px 이라는 뜻
+
+
+화면을 저 사이즈만큼 작게 하면 배경색은 파란색이 된다.
+다시 크게 하면 기존 색상으로 돌아오게 된다.
+
+
+media screen에 규칙을 작성하면
+해당 화면 사이즈에는 이런 CSS를 적용해라고 명령할 수 있다.
+
+이를 활용하여 반응형 웹 디자인을 한다.
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries

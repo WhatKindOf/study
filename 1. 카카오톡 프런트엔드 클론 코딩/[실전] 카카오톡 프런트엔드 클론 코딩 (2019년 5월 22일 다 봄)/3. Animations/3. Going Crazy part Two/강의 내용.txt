@@ -1,0 +1,14 @@
+이제 메시지 입력칸에 애니메이션을 넣을거임.
+
+margin: 0 auto; 가 원래 
+.chat__write:focus 에 있었는데
+
+이 때문에 다시 되돌아올때 '점프'하는 현상이 발생
+
+
+이를 막기 위해서 
+.chat__write에다가
+margin: 0 auto;를 넣어준다
+
+
+그리고 margin을 animate 할 수 없다고 함.

@@ -1,0 +1,46 @@
+앞서 transform과 transition을 결합해보았다.
+
+만약 이런 효과를 hover할 필요없이 계속 발생하길 원한다면?
+
+
+애니메이션을 생성해야함.
+생성방법은 다음과 같다.
+
+.box{
+	animation: 1.5s 애니메이션 이름 ease-in-out;
+}
+
+@keyframes 애니메이션 이름 {
+	from{
+		transform : none;
+	}
+	to{
+		transform : rotate(1turn) scale(.5, .5);
+	}
+}
+
+키프레임은 CSS로 하여금 애니메이션을 생성했다는 것을 알려줌.
+
+위처럼 생성하면 1.5초동안 애니메이션을 실행하는데 한번만 실행됨.
+아무것도 없는 상태 -> 1바퀴, 작은 사이즈로 변환
+
+만약 이걸 무한정 반복하고 싶다면?
+
+animation : 1.5s 애니메이션 이름 infinite ease-in-out
+
+infinite를 넣어주면 된다.
+
+
+만약 from-to말고 여러 스테이지를 넣고 싶다면?
+
+@keyframes 애니메이션 이름 {
+	0%{
+		transform : none;
+	}
+	50%{
+		transform : rotate(1turn) scale(.5, .5);
+	}
+	100%{
+		transform : none;
+	}
+}

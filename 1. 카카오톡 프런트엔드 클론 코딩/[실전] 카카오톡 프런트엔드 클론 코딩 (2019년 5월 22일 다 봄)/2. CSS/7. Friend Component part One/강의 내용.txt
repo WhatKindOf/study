@@ -1,0 +1,22 @@
+Chat부분이 수정이 필요하다.
+
+friends화면과 거의 같기 때문.
+
+friends에서 코드를 복붙해온다.
+그리고 이렇게 하게 되면
+
+friends를 위한 CSS를 한 번만 작성하고
+다른 곳에도 적용시킬 수 있다.
+
+
+<li>태그 안에 <li>를 쓰면 안된다.
+
+
+.friend__avatar.g-avatar{
+}
+
+위의 의미는 이 class를 둘 다 가진 element에 적용된다는 것.
+
+띄어쓰기 하면 안되고 같이 써야함.
+만약에 띄어쓰기하면 .friend__avatar .g-avatar는 
+friend__avatar 안에 있는 g-avatar를 의미한다.

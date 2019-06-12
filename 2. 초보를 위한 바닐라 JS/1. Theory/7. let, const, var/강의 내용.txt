@@ -1,0 +1,31 @@
+가끔은 생성해놓은 변수의 값이 바뀌질 않길 원한다.
+
+이때 사용하는 것이 const이다.
+
+const는 constant, 상수 라는 뜻.
+상수는 안정적 이라는 뜻.
+이건 변하지 않는다.
+
+const a = 221;
+a = 4;
+
+이렇게 작성하게 되면 에러가 발생한다.
+TypeError : Assignment to constant variable.
+
+
+만약 다른 사람이 변수를 바꿀 수 없게 할려면
+const를 써야하고,
+변수가 바뀌어도 괜찮다면
+let을 쓰면 된다.
+
+
+나머지 하나 var 이라는 것이 있다.
+var = variable
+이 것의 문제는 많지 않다.
+
+다만 JavaScript가 var을 적용한 이상한 규칙이 있다.
+
+var도 값을 바꿀 수 있다.
+3년 전쯤에는 var만 쓸 수 있었는데
+이제는 let과 const를 쓸 수 있게 되었다.
+

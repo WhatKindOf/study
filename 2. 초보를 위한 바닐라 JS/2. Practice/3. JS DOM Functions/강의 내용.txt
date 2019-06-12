@@ -1,0 +1,40 @@
+브라우저에서 우리에게 제공하는 더 많은 함수들이 있다.
+
+HTML이 JavaScript하고 함께 쓰려고 하면 어떻게 동작하는지 보여준다.
+
+CSS와 같이 JavaScript에서도 element를 선택할 수 있다.
+
+
+HTML의 H1태그를 JavaScript만 사용해서 바꿔보자.
+
+<h1 id="title">이라고 id를 부여하고
+이를 JavaScript에서 사용할려면 다음과 같이 작성.
+
+(CSS에서는 ID를 사용할려면 #title  id 앞에 #을 붙여주면 됨.)
+
+
+const title = document.getElementById("title");
+
+그리고 console.log(title); 을 하게 되면
+출력물은 다음과 같다.
+
+<h1 id="title">Hello!</h1>
+
+
+
+DOM (Document Object Module)
+JavaScript는 너의 HTML에 있는 모든 요소를 가지고 올거다.
+그리고 그걸 객체로 바꿀거임.
+즉, JavaScript는 HTML 태그들을 객체로 만들거다.
+
+title.innerHTML = "Hi! From JS";
+라고 작성하게 되면
+HTML에 있는 h1태그의 내용이 Hi! From JS로 바뀐다.
+
+document.getElementById로 받아오게 되면
+title이란 변수는 객체가 된다
+
+그리고 title이란 객체에 innerHTML이라는 key를 사용할 수 있게 된다.
+
+다시 말해, 너의 페이지에서 JavaScript로 선택한 것은 (document.getElementByID)
+객체가 된다. (title.innerHTML)

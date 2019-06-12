@@ -1,0 +1,97 @@
+이번 시간에는 컴퓨터에 정보를 저장하는 것을 해보자.
+
+form을 만들거임.
+
+<form class="js-form">
+      <input type="text" placeholder="What is your name?" />
+</form>
+
+<input>태그를 JS파일에서 가져오는 방법은 2가지.
+
+1. <input>태그에 class명을 지정해주고 직접 가져오는 것.
+2. <input>태그에 class명 없이,
+부모 태그인 <form>태그로부터 가져오는 방법
+
+둘 다 이전 수업들에서 해봤다.
+
+
+querySelector는 원하는 모든 것을 가져온다
+클래스 (.클래스명) 태그 (태그) 아이디 (#아이디명)
+그리고 querySelector는 찾은 것 중 첫번째 것을 가져온다.
+
+querySelectorAll은 모든 걸 가져온다.
+그래서 반환값이 array다.
+하지만 찾은 것이 하나라고 하더라도 array로 반환되기 때문에 번거롭다.
+
+
+그 외에 getElementById, getElementByTagName 등등 있다.
+
+
+이제 배울 것은 local storage 라는 것.
+이건 작은 정보를 너의 유저 컴퓨터에 저장하는 방법.
+
+콘솔창에 localStorage.setItem("kim",true); 해서 local storage를 확인해보면
+저장된 것을 볼 수 있고, 새로고침을 해도 사라지지 않는 것을 볼 수 있다.
+
+그리고 localStorage.getItem("kim"); 를 해서
+kim이라는 키값에 속하는 value를 받아올 수 있다.
+
+CSS 내용
+.form,
+.greetings {
+  display: none;
+}
+
+.showing {
+  display: block;
+}
+
+HTML 내용
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>practice</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="js-clock">
+      <h1 class="js-title">10:17</h1>
+    </div>
+    <form class="js-form form">
+      <input type="text" placeholder="What is your name?" />
+    </form>
+    <h4 class="js-greetings greetings"></h4>
+    <script src="clock.js"></script>
+    <script src="greeting.js"></script>
+  </body>
+</html>
+
+JS 내용
+const form = document.querySelector(".js-form"),
+  input = form.querySelector("input"),
+  greeting = document.querySelector(".js-greetings");
+
+const USER_LS = "currentUser",
+  SHOWING_CN = "showing"; // LS는 Local Storage, CN은 Class Name
+
+function paintGreeting(text) {
+  form.classList.remove(SHOWING_CN);
+  greeting.classList.add(SHOWING_CN);
+  greeting.innerText = `Hello ${text}`;
+}
+
+function loadName() {
+  const currentUser = localStorage.getItem(USER_LS);
+  if (currentUser === null) {
+    // nobody
+  } else {
+    paintGreeting(currentUser);
+  }
+}
+
+function init() {
+  loadName();
+}
+
+init();
+

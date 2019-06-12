@@ -1,0 +1,18 @@
+Find화면을 구성하자.
+
+header에 있는 아이콘을 적절히 떨어뜨려 놓기 위해
+
+.find__header-list에 display:flex;
+justify-content:space-between; 을 적용.
+
+
+그리고 각 아이콘들의 텍스트를 아이콘 밑에 놓고
+가운데 정렬해주기 위해
+
+.header-btn에 display:flex; 
+flex-direction:column;
+align-items:center;
+
+방향이 열방향으로 바꼈기 때문에
+가로 가운데 정렬을 해주기 위해선 align-items:center를 해줘야 함.
+

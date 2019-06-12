@@ -1,0 +1,10 @@
+지금 만들어볼 것은 메세지가 왔을때 떠있는 'badge'를 만들어 본다.
+
+대화창으로 가는 링크쪽에 배지를 <div>태그로 생성.
+
+badge의 부모클래스는 position:relative;
+자식클래스인 badge는 position:absolute;로 해줘야한다.
+
+top, right, left, bottom으로 적절한 위치를 잡아주고
+동그란 형태로 만들어주기 위해
+border-radius를 조절한다.
